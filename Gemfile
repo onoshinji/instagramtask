@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 #has_secure_passwordを使うために必要
+gem 'faker'
 gem 'bcrypt', '3.1.11'
 gem 'rails', '~> 5.2.4'
 gem 'pg', '>= 0.18', '< 2.0'

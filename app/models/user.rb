@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates :name,  presence: true, length: { maximum: 10 }
-  validates :email, presence: true, length: { maximum: 30 },
+  validates :name,  presence: true, length: { maximum: 20 }
+  validates :email, presence: true, length: { maximum: 60 },
   # メールアドレスが正しい形式で入力されているかのバリデーション
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :password, presence: true, length: { minimum: 6 }

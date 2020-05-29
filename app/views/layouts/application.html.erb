@@ -2,7 +2,7 @@
 <html>
 <div class="container-fluid">
   <head>
-    <title>フェイスブッククローン</title>
+    <title>インスタグラムクローン</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">  <!-- head内にこのタグ設定を追記する -->
     <%= csp_meta_tag %>
@@ -12,6 +12,7 @@
   </head>
   <header>
     <div class = "text-right header_text">
+      <!-- ログインしているかどうかで処理を分ける -->
       <% if logged_in? %>
       <span class="fa fa-facebook-square"</span>
         <%= "#{current_user.name}" %>

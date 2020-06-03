@@ -2,10 +2,12 @@
   <p id="notice"><%= notice %></p>
   <p>
     <strong>Image:</strong>
-    <%= image_tag @post.image.url %>
+    <%= "ユーザー" image_tag @post.image.url %>
   </p>
   <p>内容: <%= @post.content %></p>
   <%= link_to '新しく投稿する', new_post_path %>
 <%# この行に編集画面へのリンクを追加する必要がある？ %>
   <br>
   <%= link_to '投稿一覧', posts_path %>
+  <%= link_to "投稿を編集する", edit_post_path(@post.id), data: { confirm: '本当に編集していいですか？' } %>
+  <%= link_to '投稿を削除する', post_path(@post.id),data: { confirm: '本当に削除していいですか？' }, method: :delete %>

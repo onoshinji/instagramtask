@@ -12,4 +12,5 @@ class User < ApplicationRecord
   # ユーザーはポストに対しても　１対多の関係により、hasmanyが必要という解釈。
   #関連するものすべてを消去するためにdependent:destroys
   has_many :posts, dependent: :destroy
+  mount_uploader :image, ImageUploader
 end

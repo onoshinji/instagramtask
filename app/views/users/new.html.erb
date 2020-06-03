@@ -13,6 +13,8 @@
 <% end %>
 <div class = "text-center">
 <%= form_with(model: @user, local: true) do |f| %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>

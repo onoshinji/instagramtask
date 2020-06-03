@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
   <p>
     <strong>Image:</strong>
-    <%= "ユーザー" image_tag @post.image.url %>
+    <%= image_tag @post.image.url %>
   </p>
   <p>内容: <%= @post.content %></p>
   <%= link_to '新しく投稿する', new_post_path %>

@@ -29,15 +29,17 @@
       <a><i class="fa fa-instagram fa-fw"></i>&nbsp; instagram</a>
       </div>
     </header>
-    <body>
-      <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
-      <%= yield %>
-      <footer>
-        <p>インスタグラムクローン</p>
-        <p>© 2020 5/27 ~ 5/31 ５月期小野作成</p>
-      </footer>
-    </body>
+    <div id class ="blend">
+      <body>
+        <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+        <%= yield %>
+        <footer>
+          <p>インスタグラムクローン</p>
+          <p>© 2020 5/27 ~ 5/31 ５月期小野作成</p>
+        </footer>
+      </body>
+    </div>
 </div>
 </html>

@@ -32,7 +32,11 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+  # 「今ログインしているユーザーが、そのブログをお気に入り登録しているかどうか」を判断するための処理をしています。
+  # find_by(blog_id: @blog.id) で、その全抽出したFavoriteのレコードの中に、このブログのidが存在していれば（このブログがお気に入りに登録されていれば）、そのFavoriteのレコード（user_idとblog_id）を@favoriteに代入します。
+  # このブログのidが存在しなければ（このブログがお気に入りに登録されていなければ）、@favoriteにnilを代入します（find_byメソッドは、条件に一致するものがない場合には、nilを返します）。
   def show
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
 
   def destroy

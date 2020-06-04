@@ -1,8 +1,6 @@
-<h2>ユーザー詳細画面</h2>
   <p id="notice"></p>
-  <h2><%= @user.name %>のページ</h2
-    <strong>Image:</strong>
-    <%= image_tag @user.image.url %>
+  <p><%= image_tag @user.image.url %></p>
+  <h4><%= @user.name %>さん</h4>
   <p>メールアドレス: <%= @user.email %></p>
   <%= @user.posts.each do |post| %>
     <tr>
@@ -11,13 +9,16 @@
       <td>投稿内容:<%= post.content %></td>
       <br>
       <td><%= image_tag post.image.url %></td>
-      <br>
-      <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
-      <td><%= link_to "投稿を編集する", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to '投稿を削除する', post_path(post.id),data: { confirm: '本当に削除していいですか？' }, method: :delete %></td>
-      <td><%= link_to '新しく投稿する', new_post_path %> <td>
-      <td><%= link_to 'みんなの投稿', posts_path %> </td>
+      <div id ="footer_top">
+        <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+        <td><%= link_to "投稿を編集する", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to '投稿を削除する', post_path(post.id),data: { confirm: '本当に削除していいですか？' }, method: :delete %></td>
+        <td><%= link_to '新しく投稿する', new_post_path %> <td>
+        <td><%= link_to 'みんなの投稿', posts_path %> </td>
+      </div>
     </tr>
   <% end %>
+  <div id ="footer_top">
     <%= link_to "投稿一覧画面にもどる", posts_path %>
     <%= link_to "ユーザー情報を編集する", edit_user_path(@user.id) %>
+  </div>

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # メールアドレスが正しい形式で入力されているかのバリデーション
             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :password, presence: true, length: { minimum: 6 }
+  validates :image,  presence: true
 
     # 大文字小文字を区別するためにすべて小文字として判定するための破壊的メソッドdowncase!
   before_validation { email.downcase! }

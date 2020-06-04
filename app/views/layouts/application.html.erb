@@ -13,20 +13,20 @@
   <header>
     <div class = "text-right header_text">
       <!-- ログインしているかどうかで処理を分ける -->
+      <p class="fa fa-instagram fa-fw"></p>
       <% if logged_in? %>
-      <span class="fa fa-facebook-square"</span>
-        <%= "#{current_user.name}" %>
+        <%= "ログイン中: #{current_user.name}さん" %>
         <%= link_to "Profile", user_path(current_user.id) %>
         <%= link_to "Logout", session_path(current_user.id), method: :delete %>
         <% else %>
         <%= "あなたは今ログインしていません" %>
         <%= link_to "Sign up", new_user_path %>
         <%= link_to "Login", new_session_path %>
-        <% end %>
-        <a ><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
-        <a><i class="fa fa-book fa-fw"></i>&nbsp; Library</a>
-        <a ><i class="fa fa-pencil fa-fw"></i>&nbsp; Applications</a>
-        <a><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
+      <% end %>
+      <a><i class="fa fa-facebook fa-fw"></i>&nbsp; facebook</a>
+      <a><i class="fa fa-google fa-fw"></i>&nbsp; google</a>
+      <a><i class="fa fa-twitter fa-fw"></i>&nbsp; twitter</a>
+      <a><i class="fa fa-instagram fa-fw"></i>&nbsp; instagram</a>
       </div>
     </header>
     <body>

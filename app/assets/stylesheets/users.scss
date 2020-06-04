@@ -4,19 +4,21 @@ html {
   min-height: 100%;
 }
 header{
-  background-color: #428dda;
+  background-color: #e7b63a;
   height: 3rem;
+  opacity: 0.8;
 }
 body{
-  background-color: #e8e7f2
+  background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8));
+  background-size: cover;
 }
 footer{
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #3f90be;
-  opacity: 0.5;
+  background-color: #e7b63a;
+  opacity: 0.8;
 }
 .header_text{
   font-size: 2rem;
@@ -26,8 +28,8 @@ footer{
   margin-bottom: 30px;
 }
 
-#footer-top{
-margin-bottom: 10%;
+#footer_top{
+margin-bottom: 6rem;
 }
 #index_color{
   background-color: #dee9c2;

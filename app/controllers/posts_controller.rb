@@ -48,6 +48,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     render :new if @post.invalid?
   end
+  # 現在ログインしているユーザーと投稿者が合っているか判断するメソッド
 
   private
   def post_params
@@ -63,7 +64,6 @@ class PostsController < ApplicationController
       redirect_to new_session_path
     end
   end
-  # 現在ログインしているユーザーと投稿者が合っているか判断するメソッド
   def ensure_correct_user
     # 現在ログインしているユーザーと投稿者が合っていなければ
     unless current_user.id == @post.user_id #IDと比較する。ユーザーIDと比較する

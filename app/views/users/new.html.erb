@@ -3,7 +3,7 @@
 <% if @user.errors.any? %>
 <!--error_explanationをIDに設定するとデフォルトで設定されているスタイルが適用される -->
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <h3><%= pluralize(@user.errors.count, "件のエラーが出たで。") %>すまんな、どこか違うんや。確認してくれるか？</h3>
     <ul>
     <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -15,6 +15,7 @@
 <%= form_with(model: @user, local: true) do |f| %>
   <%= f.file_field :image %>
   <%= f.hidden_field :image_cache %>
+  <br>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>

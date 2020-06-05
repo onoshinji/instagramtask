@@ -11,8 +11,10 @@
     <td><%= post.title %></td>
     <td><%= post.content %></td>
     <td type="button" class="btn btn-info"><%= link_to '詳細を確認する', post_path(post.id) %></td>
+    <% if current_user == post.user %>
     <td type="button" class="btn btn-default"><%= link_to "投稿を編集する", edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
     <td type="button" class="btn btn-danger"><%= link_to '投稿を削除する', post_path(post.id),data: { confirm: '本当に削除していいですか？' }, method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

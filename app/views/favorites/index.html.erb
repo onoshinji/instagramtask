@@ -1,0 +1,7 @@
+<% @favorite.each do |favorite| %>
+<%= favorite.post.title %>
+<%= favorite.post.content %>
+<%# ここのイメーシの記述には苦労した。 %>
+<%= image_tag favorite.post.image.url %>
+
+<% end %>

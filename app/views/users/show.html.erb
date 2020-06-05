@@ -18,6 +18,11 @@
       </div>
     </tr>
   <% end %>
+  <br>
+
+  <button type="button" class = "btn btn-default">
+  <%= link_to 'お気に入り一覧を見る', favorites_path %>
+  </button>
   <div id ="footer_top">
     <%= link_to "投稿一覧画面にもどる", posts_path %>
     <%= link_to "ユーザー情報を編集する", edit_user_path(@user.id) %>

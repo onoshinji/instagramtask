@@ -1,9 +1,10 @@
 class ContactMailer < ApplicationMailer
-  # ここでは引数としてcontact_mail(contact)で引数の値を受け取っています。
+
   def contact_mail(contact)
-    #@contact = contactとすることでお問い合わせをした人の情報をViewファイルに渡すことができます。
+    #PostsControllerのcreateアクションから引数contactに
     @contact = contact
-    @user = current_user
-    mail to: "yjsnpi555@gmail.com", subject: "お問い合わせの確認メール"
+    # メソッド内で@contact = contactとしているのは@contactをView(contact_mail.html.erb)で使用するため。
+    #下記に記述したコードで投稿した本人のアドレスに確認メールをとばすもの。
+    mail to: "#{@contact.user.email}", subject: "あなたの記事が投稿されました"
   end
 end

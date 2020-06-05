@@ -1,7 +1,10 @@
 <% @favorite.each do |favorite| %>
-<%= favorite.post.title %>
-<%= favorite.post.content %>
-<%# ここのイメーシの記述には苦労した。 %>
-<%= image_tag favorite.post.image.url %>
 
+<br>
+<%# ここのイメーシの記述には苦労した。記述の仕方はよく覚えておこう %>
+<%= image_tag favorite.post.image.url %>
+<br>
+<%= "#{favorite.post.user.name}さんの投稿。" %>
+<br>
+<%= "#{favorite.post.created_at}" %>
 <% end %>

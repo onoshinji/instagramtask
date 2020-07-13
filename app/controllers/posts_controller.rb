@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     else
       if @post.save
         redirect_to posts_path, notice: "投稿を作成しました"
-        #メールを送信する記述をしている。.contact_mailの引数に@postを渡している。
+        #ここではcontact_mailの引数に@postを渡している。
         # ContactMailer.contact_mail(@post).deliver
       else
         render :new

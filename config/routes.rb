@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "sessions#new"
   resources :sessions, only: [:new, :create, :destroy,:show]
   resources :users
   # お気に入りの保存と削除するためのルーティング

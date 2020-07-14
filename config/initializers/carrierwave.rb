@@ -21,3 +21,4 @@ CarrierWave.configure do |config|
       config.fog_directory = 'ono-instagram-development'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/ono-instagram_development'
   end
+end

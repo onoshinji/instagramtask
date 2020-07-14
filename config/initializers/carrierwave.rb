@@ -16,7 +16,7 @@ CarrierWave.configure do |config|
   case Rails.env
     when 'production'
       config.fog_directory = 'ono-production'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/ono-instagram_production'
+      config.asset_host = 'https://ono-production.s3.amazonaws.com'
     when 'development'
       config.fog_directory = 'ono-instagram-development'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/ono-instagram_development'
